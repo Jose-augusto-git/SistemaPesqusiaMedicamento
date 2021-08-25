@@ -1,0 +1,178 @@
+
+
+
+#page-landing{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background:#b1e4f9;
+    
+}
+aside{
+    width: clamp(34rem, 25vw, 44rem);
+    
+    padding: clamp(3rem,5vw, 8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+aside h2 {
+    font-size: 40px;
+    color: black;
+    margin-top: 10rem;
+}
+
+#page-landing #container{
+    color: white;
+}
+
+.logo-container img{
+    height: 10rem;
+}
+.logo-container{
+    text-align: center;/*alinhamento do texto */
+    margin-bottom: 3.2rem;
+}
+.logo-container h2{
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 4.6rem;/*altura da linha do texto*/
+    margin-top: 8rem;
+}
+.hero-image{
+    width: 100%;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;/*coloca centralizado*/
+    margin: 3.2rem 0;
+}
+
+
+.buttons-container a.busca{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    
+    height: 10.4rem;
+    border-radius: 0.8rem;/* funciona para aredondar as bordas*/
+    margin-right: 1.6rem;
+
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    transition: background 0.2s ;/* e um estado de transição que e ultilizado para animações no css*/
+    color: black;
+   
+}
+
+.buttons-container a.cadastro{
+    margin-left: 1rem;
+    position: absolute;
+    /* left: 5%; */
+    bottom: 20px;
+    /* width: 90%; */
+    width: 100rem;
+    height: 10.4rem;
+    border-radius: 0.8rem;
+    /* margin-right: 1.6rem; */
+    font: 700 2.4rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s;
+    color: white;
+}
+
+
+
+
+.buttons-container a img{
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+.buttons-container a.busca{
+    background: white;
+   
+
+}
+.buttons-container a.ficha{
+    background: black;
+    margin-right: 0;
+}
+
+.buttons-container a.cadastro{
+    background: black;
+    margin-right: 0;
+}
+
+.buttons-container a.busca:hover{ /*:hover sera ativado quando as propriedades estiver no estado hover  */
+    background:blue;
+}
+
+.buttons-container a.cadastro:hover{
+    background: var(--color-secondary-dark);
+
+}
+.total-connections{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.total-connections img{
+    margin-left: 0.8rem;
+}
+
+@media (max-width:720px){
+    :root{
+        font-size: 40%;/*modificca as medidas rem*/
+    }
+}
+
+@media(min-width:990px){
+    #page-landing #container{
+        max-width: 990px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 350px 1fr;
+        grid-template-areas: 
+        "paciente image image" 
+        "button button texting";
+        column-gap: 87px;
+        row-gap: 86px;
+
+    }
+    .logo-container{
+        grid-area: paciente;
+        text-align: initial;
+        align-self: center;/*alinha o conteudo ao centro*/
+        margin: 0;
+    }
+    .logo-container img{
+        height: 300px;
+    }
+    .hero-image{
+        grid-area: image ;
+        height: 350px;
+
+    }
+    .buttons-container{
+        grid-area: button;
+        justify-content: flex-start;/*flex-start coloca o conteudo no inicio do flex */
+        margin: 0;
+    }
+    .total-connections{
+        grid-area: texting;
+        justify-self:end ;
+        font-size: 1.2rem;
+    }
+}/*@media e uma regra que funciona quando atigi um padrão */

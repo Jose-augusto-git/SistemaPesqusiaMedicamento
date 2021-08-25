@@ -1,0 +1,300 @@
+#busca  #container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.page-header{
+    background-color: #00BFFF;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#imagem img{
+    margin-left: 70rem;
+    
+    position: absolute;
+    width: 15rem;
+}
+
+.page-header .top-bar-container{
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.6rem 0;
+}
+
+.page-header.top-bar-container a{
+    height: 3.2rem;
+    transition: opacity 0.2s;
+}
+
+.page-header .top-bar-container a:houver{
+    opacity: 0.6;
+}
+
+
+.page-header .top-bar-container img{
+    height: 5.6rem;  
+    
+}
+
+.page-header .header-content{
+    width: 90%;
+    margin: 3.2rem auto;
+
+    position: relative;
+}
+
+.page-header .header-content strong{
+    font: 700 3.6rem archivo;
+    line-height: 4.2rem;/*vai mexer na altura da linha do texto */
+    color: white;
+}
+
+#busca-cliente{
+    margin-top: 3.2rem;
+}
+
+#busca-cliente{
+    color: var(--color-title-in-primary);
+}
+
+#busca-cliente .select-block{
+    margin-bottom: 1.4rem;
+}
+
+#busca-cliente  button{
+    width: 100%;
+    height: 5.6rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: .8rem; 
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    margin-top: 3.2rem;
+}
+
+#busca-cliente button:hover{
+    background-color: var(--color-secondary-dark);
+}
+
+.select-block label, 
+.input-block label{
+    font-size: 1.4rem;
+    /*color: var(--color-text-complement);*/
+}
+
+.input-block input,
+.select-block select{
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0;/* tira a bordar preta de dentro da caixa de seleção*/
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+}
+.input-block{
+    position: relative;
+}
+.input-block:focus-within::after{/* quando tiver um elemento em foco ou selecionado vai criar um elemento */
+    content: "";
+
+    width: calc(100% - 3.2rem);/* calc = calculo*/
+    height: 2px;
+    background: black;
+
+    position: absolute;
+    left: 1.6rem;
+    bottom: 0;
+}
+
+#busca main{
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+#busca article{
+    background-color:  var(--color-box-base);
+    border: 1px solid var(--color-line-in-white);
+    border-radius: .8rem;
+    margin-top:2.4rem;
+
+}
+
+.item-cliente header{
+    padding: 3.2rem 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.item-cliente header img{
+    width: 8rem;
+    height: 8rem;/*rem nao e fixo, ele e fluido*/
+    border-radius: 50%;
+}
+
+.item-cliente header div {
+    margin-left: 2.4rem;
+}
+
+.item-cliente header div strong{
+    font: 700 2.4rem Archivo;
+    display: block;/*ocupa o espado da linha toda*/
+    color: var(--color-text-title);
+}
+.item-cliente header div span{
+    font-size: 1.6rem;
+    display: block;
+    margin-top: .4rem;/*margin-top so funciona com o diplay:block*/
+}
+
+.item-cliente > p{
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+}
+
+.item-cliente footer{
+    padding: 3.2rem 2rem;
+    background-color:  var(--color-box-footer);
+    border-top: 1px solid var(--color-line-in-white);
+    margin-top: 3.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+
+#tabela, th, td{
+    border: 1px solid black;
+    margin: 1.6rem;
+    border-radius: 0rem;
+    float: left;
+}
+
+.item-cliente footer p{
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--color-text-complement);
+
+}
+.item-cliente footer p strong{
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    display: block;
+}
+
+.item-cliente footer .button{
+    width: 20rem;
+    height: 5.6rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: .8rem;
+    cursor: pointer;
+    font: 700 1.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    transition: background 0.2s;
+    margin-left: 1.6rem;
+}
+
+.item-cliente footer .button:hover{
+    background: var(--color-secondary-dark);
+}
+
+@media (min-width: 700px){
+    #busca #container{
+        max-width: 100vw;
+    }
+
+    .item-cliente header,
+    .item-cliente footer{
+        padding: 32px;
+    }
+
+    #busca-cliente{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);/*repeat repete 4 vezes */
+        gap: 16px;
+        position: absolute;
+        bottom: -28px;
+    }
+
+    .page-header {
+        height: 340px;
+    }
+
+    .page-header.top-bar-container{
+        max-width: 1100px;
+    }
+
+    .page-header .header-content{
+        max-width: 740px;
+
+        margin: 0 auto;
+
+        flex: 1 1;
+        padding-bottom:  48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .page-header .header-content strong{
+        max-width: 1000px;
+    }
+
+    #busca main{
+        padding: 32px 0;
+        max-width: 740px;
+        margin: 0 auto;
+
+    }
+
+    #busca-cliente .select-block{
+        margin-bottom: 0;
+    }
+
+    .item-cliente footer p strong{
+        display: initial;
+        margin-left: 16px;
+    }
+
+    .item-cliente > p{ 
+        padding: 0 32px;/* ao colocar a > diz que esta pegando a primeira parte do <p>*/
+    }
+
+    .item-cliente footer button{
+        width: 245px;
+        font-size: 16px;
+        justify-content: center;
+    }
+
+    .item-cliente footer button img{
+        margin-right: 16px;
+    }
+}
+
+.article, strong{
+    font-size: 300px;
+}

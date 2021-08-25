@@ -1,0 +1,113 @@
+
+
+    
+$link-text-color: #fff;
+$button-bg-1: #541388;
+
+
+
+/* common styles !!!YOU DON'T NEED THEM */
+body {
+  background-color: $bg-color;
+  
+  .container {
+    width: 850px;
+    margin: 70px auto 0px auto;
+    text-align: center;
+    
+    h1 {
+      font: {
+        family: 'Droid Serif', serif;
+        weight: 400;
+        style: normal;
+        size: 30px;
+      }
+      margin-bottom: 30px;
+      
+      span {
+        font: {
+          weight: 700;
+          style: italic;
+        }
+        color: #D90368;
+        border-bottom: 2px dashed currentColor;
+      }
+    }
+    
+    .button-effect {
+      padding: 30px 0px; 
+      
+      h2 {
+        font: {
+          family: 'Droid Serif', serif;
+          size: 20px;
+        }
+        margin-bottom: 40px;
+      }
+      
+      a {
+        margin-right: 17px;
+        
+        &:nth-child(2) {
+          background-color: $button-bg-1;
+        }
+        
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
+
+/* button styles !!!YOU NEED THEM 
+!!!ALSO YOU NEED TO ADD FONTWESOME */
+  
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: $link-text-color;
+  text-transform: capitalize;
+  /* background-color: - add your own background-color */
+  font: {
+    family: 'Roboto', sans-serif; /* put your font-family */
+    size: 18px;
+  }
+  padding: 20px 0px;
+  width: 150px;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+/* effect-1 styles */
+
+.effect.effect-1 {
+  transition: all 0.2s linear 0s;
+  
+  &:before {
+    content: "\f178";
+    font-family: FontAwesome;
+    font-size: 15px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 40px;
+    transition: all 0.2s linear 0s;
+  }
+  
+  &:hover {
+    text-indent: -20px;
+    
+    &:before {
+      opacity: 1;
+      text-indent: 0px;
+    }
+  }
+}
