@@ -1,3 +1,5 @@
+
+<?php require_once'validador_acesso.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
  
@@ -33,7 +35,9 @@
     <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold"></small></button>
 
     <!-- Demo content -->
-    <h2 class="display-4 text-white">Sistema de Busca de Medicamentos</h2>
+    <h2 class="display-4 text-white text-center">Sistema de Busca de Medicamentos</h2>
+		<div class="separator"></div>
+
     <br>
     <div>
       <header class="page-header">
@@ -50,7 +54,10 @@
       
       <!-- Formulario -->
       <form class="form" action="bd-medicamento.php" method="POST"id="create-class" >
-      <legend class="text-center "> Cadastro de Medicamento <img  style="width: 5rem;" src='imagem/remedios.svg' alt='remedios'></legend>
+
+      <h2 class="text-center "> Cadastro de Medicamento <img  style="width: 5rem;" src='imagem/remedios.svg' alt='remedios'></h2>
+
+
         <br>
 
 

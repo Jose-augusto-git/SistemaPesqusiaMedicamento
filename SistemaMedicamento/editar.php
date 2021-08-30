@@ -6,6 +6,7 @@ $result_usuario = "SELECT * FROM sistema WHERE id = '$id'";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 ?>
+<?php require_once'validador_acesso.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,73 +8,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/telaPrincipal.css">
-    
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel='icon' href='imagem/entrar.svg'/>
+  <link rel="stylesheet" href="css/telaPrincipal.css">
 
-    <!-- JavaScript Bundle with Popper -->
-    
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    
-
-    <title>NewLife | Tela Inicial</title>
+    <title>Login</title>
 </head>
 
-<body id="data-bs-no-jquery">
-<!-- Vertical navbar -->
-<?php require_once'navBar.php';?>
-<!-- End vertical navbar -->
+<body>
+    
+    <div class="container">
+        
+        <div class="row justify-content-between  pt-50 ">
 
-<script src="js/telaPrincipal.js"></script>
-<!-- Page content holder -->
-<div class="page-content p-5" id="content">
-  <!-- Toggle button -->
-  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold"></small></button>
+        <div class="row">
+            <!--Inicio coluna da esquerda-->
+            <div class="col-md col-6 coluna-esquerda pt-5 m-50 d-none d-sm-block d-sm-none d-md-block"><!--margin-right: 1rem; width: 20%;-->
+               <!-- <p class="text-center mt-2"  id="p-login"> Olá, Seja Bem Vindo! </p> -->
+                <img class="img-fluid pt-5" src='imagem/login.svg' alt='Agendamento'> 
 
-  <!-- Demo content -->
-  <h2 class="display-4 text-white">Sistema de Busca de Medicamentos</h2>
-  
-  <div class="separator"></div>
-  <div class="row text-white">
-    <div class="col-lg-7">
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor.
-      </p>
-      <div class="bg-white p-5 rounded my-5 shadow-sm">
-        <p class="lead font-italic mb-0 text-muted">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor.
-      </p>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor.
-      </p>
+            </div>
+            <!--Fim coluna da esquerda-->
+
+            <!--Inicio coluna da direita-->
+            <div class="col-md coluna-direita col-12 col-md-8 p-5">
+                <h2 class="text-center mt-5"  id="titulo" >Entrar no Sistema</h2>
+
+                <form method="POST" action="acoes/login.php">
+                    <!-- E-MAIL -->
+                    <div class="form-group ">
+                    <label class=" m-3 texto-form  d-md-none d-lg-none d-xl-none">E-mail</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group m-2"><img class="d-none d-sm-block d-sm-none d-md-block" src='imagem/o-email.svg' alt='Agendamento' style='width:3rem;'></div>
+                        </div>
+                        
+                        <input class="p-lg-2 form-control" placeholder="Digite o Email" type="email" name="email" required>
+                    </div>
+                      </div>
+                    <!-- --------------------------------------- -->
+                    
+                    <!-- SENHA -->
+                    <div class="form-group">
+                        <label class="m-3 form-group texto-form  d-md-none d-lg-none d-xl-none"> Senha </label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                            <div class="input-group m-2"><img class="d-none d-sm-block d-sm-none d-md-block" src='imagem/senha.svg' alt='Agendamento' style='width:3rem;'></div>
+                            </div>
+                            <input class="p-lg-2 form-control" placeholder="Digite a senha" type="password" name="senha" required>
+                        </div>
+                    </div>                    
+                    <!-- --------------------------------------- -->
+                    
+                    <button type="submit" class="btn btn-second">Entrar</button>
+                  </form>
+            </div>
+            <!--Fim coluna da direita-->
+
+        </div>
+        </div>
     </div>
-    <div class="col-lg-5">
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor.
-      </p>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor.
-      </p>
-    </div>
-  </div>
-
-</div>
-<!-- End demo content -->
-
 </body>
 
 </html>

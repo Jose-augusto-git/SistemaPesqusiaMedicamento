@@ -1,6 +1,7 @@
 <?php
 include_once("conexao.php");
 ?>
+<?php require_once'validador_acesso.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -45,13 +46,14 @@ include_once("conexao.php");
 		</header>
 		<!-- Toggle button -->
 		<button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold"></small></button>
-
+   
 		<!-- Demo content -->
-		<h2 class="display-4 text-white">Sistema de Busca de Medicamentos</h2>
+		<h2 class="display-4 text-white text-center">Sistema de Busca de Medicamentos</h2>
 		<div class="separator"></div>
 		<div class="row text-white ">
 		<form class="pb-5" id="busca-cliente" method="POST" action="">
-		<legend class="text-center "> Busca de Medicamentos Cadastrados<img class="px-2"  style="width: 5rem;" src='imagem/lista-medicamento.svg' alt='remedios'></legend>
+		<h1 class="text-center text-dark"><img class="px-2"  style="width: 5rem;" src='imagem/lista-medicamento.svg' alt='remedios'> Busca de Medicamentos Cadastrados</h1>
+		<div class="separator"></div>
 			<nav class=" navbar navbar-light bg-light">
 			
 			<div class="input-group px-3">
