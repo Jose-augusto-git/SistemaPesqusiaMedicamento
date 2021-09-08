@@ -1,7 +1,5 @@
-<?php
-  session_start();
-?>
-<?php require_once'validador_acesso.php'; ?>
+
+
 <div class="vertical-nav bg-white" id="sidebar">
   <div class="py-4 px-3 mb-4 bg-light">
     <div class="media d-flex align-items-center">
@@ -14,9 +12,10 @@
 
   <ul class="nav flex-column bg-white mb-0">
     <li class="nav-item">
-        <a href="index.php" class="nav-link text-dark font-italic bg-light">
-                  <i class=" mr-3 text-dark fa-fw fas fa-home"></i>
-                  Home
+        <a href="acoes/logout.php" class="nav-link text-danger font-italic bg-light">
+                  <i class="mr-3 text-danger fas fa-sign-out-alt"></i>
+                  
+                  Sair
               </a>
       </li>
   </ul>

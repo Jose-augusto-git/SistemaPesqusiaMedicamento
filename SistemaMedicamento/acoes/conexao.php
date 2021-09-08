@@ -2,7 +2,7 @@
     $server = "127.0.0.1";
     $usuario = "root";
     $senha = "";
-    $banco = "crud";
+    $banco = "sistemabuscamedicamento";
 
     try{
         $conexao = new PDO("mysql:host=$server;dbname=$banco", $usuario, $senha);
@@ -12,3 +12,4 @@
         $conexao = null;
     }
 ?>
+

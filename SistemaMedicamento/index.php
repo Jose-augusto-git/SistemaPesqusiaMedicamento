@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,8 +11,13 @@
     <link rel="stylesheet" href="css/estilo.css">
     <link rel='icon' href='imagem/entrar.svg'/>
   <link rel="stylesheet" href="css/telaPrincipal.css">
+  <script src="js/bootstrap.min.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/bootstrap/dist/css/bootstrap.min.css"></script>
+
 
     <title>Login</title>
+   
 </head>
 
 <body>
@@ -26,9 +28,10 @@
 
         <div class="row">
             <!--Inicio coluna da esquerda-->
-            <div class="col-md col-6 coluna-esquerda pt-5 m-50 d-none d-sm-block d-sm-none d-md-block"><!--margin-right: 1rem; width: 20%;-->
-               <!-- <p class="text-center mt-2"  id="p-login"> Olá, Seja Bem Vindo! </p> -->
+            <div  class="col-md col-6 coluna-esquerda pt-5 m-50 d-none d-sm-block d-sm-none d-md-block"><!--margin-right: 1rem; width: 20%;-->
+               <p class="text-center text-success mt-2"  id="p-login"> New<span class="text-danger">Life</span> </p>
                 <img class="img-fluid pt-5" src='imagem/login.svg' alt='Agendamento'> 
+                
 
             </div>
             <!--Fim coluna da esquerda-->

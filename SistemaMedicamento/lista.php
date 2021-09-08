@@ -1,6 +1,4 @@
-<?php
-include_once("conexao.php");
-?>
+
 <?php require_once'validador_acesso.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">

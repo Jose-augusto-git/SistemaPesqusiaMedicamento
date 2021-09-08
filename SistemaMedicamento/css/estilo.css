@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;   
+    
+}
+
+ body{
+    background: black url(https://source.unsplash.com/random) no-repeat; 
+    background-size:cover;
+    background-position:50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+ }
+
+.coluna-esquerda{
+    background:linear-gradient(329.54deg, #15b6d6 0%, #15d6d6 100%);
+    border: 5px solid black;
+    box-shadow: 5px 5px rgb(0 0 0 / 60%);
+    
+      
+}
+
+.col-6{
+    margin-right: 1rem;
+    width: 20%;
+}
+
+.coluna-direita{
+    background: black;
+    border: 5px solid black;
+    box-shadow: 5px 5px rgb(0 0 0 / 60%);
+}
+
+.form-control {
+    font: 700 2rem Archivo;
+    color: #3891af;
+    background: #add8e6;
+}
+
+.container{
+    height: 50%;
+    width: 60%;
+
+}
+
+.pt-50 {
+    padding-top: 5em;
+}
+
+.btn-second {
+    width: 100%;
+    background-color: #08bcfa;
+    border: 1px solid #08bcfa;
+    transition: background-color .5s;
+}
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+    height: 4rem;
+    border: 0;
+    border-radius: 8rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.2s;
+    margin-top: 3rem;
+}
+
+.btn-second:hover {
+    background-color: #fff;
+    border: 1px solid #08bcfa;
+    color: #08bcfa;
+}
+
+.texto-form{
+    color:white;
+    text-align: center;
+}
+
+input {
+    color: #3891af;;
+    background-color: #add8e6;
+    
+}
+
+#p-login{
+    font-family: 'Open Sans', sans-serif;font-weight: bold;
+    text-transform: capitalize; color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    text-shadow: 5px 5px rgb(0 0 0 / 10%);
+}
+
+#titulo{
+    color: #08bcfa;
+    font-size: 26pt;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
