@@ -2,9 +2,10 @@
 
 include_once("conexao.php");
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-$result_usuario = "SELECT * FROM sistema WHERE id = '$id'";
-$resultado_usuario = mysqli_query($conn, $result_usuario);
-$row_usuario = mysqli_fetch_assoc($resultado_usuario);
+$stmt = $conn->prepare("SELECT * FROM sistema WHERE id = ?");
+$stmt->execute([$id]);
+$row_usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
 <?php require_once'validador_acesso.php'; ?>
 <!DOCTYPE html>
@@ -26,7 +27,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 
-  <title> NewLife | Cadastro</title>
+  <title> NewMedic | Cadastro</title>
   <link rel="icon" href="imagem/prescricao-medica.svg" />
 </head>
 

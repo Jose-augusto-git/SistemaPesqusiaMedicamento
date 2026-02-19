@@ -2,24 +2,24 @@
 session_start();
 include_once("conexao.php");
 
-$medicamentos = filter_input(INPUT_POST, 'medicamentos', FILTER_SANITIZE_STRING);
-$abreviacao = filter_input(INPUT_POST, 'abreviacao', FILTER_SANITIZE_STRING);
-$latim = filter_input(INPUT_POST, 'latim', FILTER_SANITIZE_STRING);
-$fonte = filter_input(INPUT_POST, 'fonte', FILTER_SANITIZE_STRING);
-$principal = filter_input(INPUT_POST, 'principal', FILTER_SANITIZE_STRING);
+$medicamentos = filter_input(INPUT_POST, 'medicamentos', FILTER_DEFAULT);
+$abreviacao = filter_input(INPUT_POST, 'abreviacao', FILTER_DEFAULT);
+$latim = filter_input(INPUT_POST, 'latim', FILTER_DEFAULT);
+$fonte = filter_input(INPUT_POST, 'fonte', FILTER_DEFAULT);
+$principal = filter_input(INPUT_POST, 'principal', FILTER_DEFAULT);
 
 
-$result_usuario = "INSERT INTO sistema (medicamentos,abreviacao,latim,fonte,principal) VALUES ('$medicamentos','$abreviacao','$latim','$fonte','$principal')";
-$resultado_usuario = mysqli_query($conn, $result_usuario);
+$stmt = $conn->prepare("INSERT INTO sistema (medicamentos, abreviacao, latim, fonte, principal) VALUES (?, ?, ?, ?, ?)");
+$resultado = $stmt->execute([$medicamentos, $abreviacao, $latim, $fonte, $principal]);
 
-if(mysqli_affected_rows($conn)){
+if ($resultado) {
     $_SESSION['msg'] = "<p style='color:#e4ff00;font-size:3.0rem;max-width: 1000px;'>
     
     <img src='imagem/verifica.svg' alt='voltar' style='width: 4rem;'>
     Medicamento cadastrado com sucesso 
     </p>";
     header("Location: cadastro.php");
-}else{
+} else {
     $_SESSION['msg'] = "<p style='color:red; font-size:3.0rem;max-width: 1000px;'>
     <img src='imagem/pare.svg' alt='voltar' style='width: 4rem;'>
 	Atenção Medicamento não foi cadastrado
@@ -27,3 +27,4 @@ if(mysqli_affected_rows($conn)){
     </p>";
     header("Location: cadastro.php");
 }
+

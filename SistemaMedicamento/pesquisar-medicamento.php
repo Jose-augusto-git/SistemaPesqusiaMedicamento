@@ -10,18 +10,12 @@ include_once("conexao.php");
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/telaPrincipal.css">
-	<script src="js/bootstrap.min.js"></script>
-
-	<!-- JavaScript Bundle with Popper -->
-
-	<script src="js/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 
-	<title> New Life | Busca de principal </title>
+	<title> New Medic | Busca de principal </title>
 	<link rel='icon' href='imagem/busca.svg'/>
 
 </head>
@@ -69,57 +63,66 @@ include_once("conexao.php");
 			</form>
             <?php
                             
-                            $SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+                            $SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_DEFAULT);
                             if($SendPesqUser){
-                                $medicamentos = filter_input(INPUT_POST, 'medicamentos', FILTER_SANITIZE_STRING);
-                                $result_usuario = "SELECT * FROM  sistema WHERE medicamentos LIKE '%$medicamentos%'";
-                                $resultado_usuario = mysqli_query($conn, $result_usuario);
-                                while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
+                                $medicamentos = filter_input(INPUT_POST, 'medicamentos', FILTER_DEFAULT);
+                                $stmt = $conn->prepare("SELECT * FROM sistema WHERE medicamentos LIKE ?");
+                                $stmt->execute(["%$medicamentos%"]);
+                                
+                                echo '<div class="table-responsive">';
+                                echo '<table class="table table-hover table-light table-striped shadow-sm">';
+                                echo '<thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Medicamento</th>
+                                            <th scope="col">Abreviação</th>
+                                            <th scope="col">Latim</th>
+                                            <th scope="col">Fonte</th>
+                                            <th scope="col">Ações</th>
+                                        </tr>
+                                      </thead>';
+                                echo '<tbody>';
 
-                                    echo '<h1 class="d-none"> ID:<br>' . $row_usuario['id'] . "</h1>";
+                                while($row_usuario = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                    echo '<tr>';
+                                    echo '<td>' . $row_usuario['id'] . '</td>';
+                                    echo '<td>' . $row_usuario['medicamentos'] . '</td>';
+                                    echo '<td>' . $row_usuario['abreviacao'] . '</td>';
+                                    echo '<td>' . $row_usuario['latim'] . '</td>';
+                                    echo '<td>' . $row_usuario['fonte'] . '</td>';
+                                    echo '<td>';
+                                    echo '<div class="btn-group btn-group-sm" role="group">';
+                                    echo "<a class='btn btn-success' title='Editar' href='editar.php?id=" . $row_usuario['id'] . "'><i class='fas fa-edit'></i></a>";
+                                    echo '<button type="button" class="btn btn-danger" title="Apagar" data-bs-toggle="modal" data-bs-target="#modalExcluir' . $row_usuario['id'] . '"><i class="fas fa-trash"></i></button>';
+                                    echo '</div>';
 
-                                    echo '<div class="row text-white">';
-                                    /*echo '<div class="col-lg-7">'; */
-                                    echo '<h3 class="text-dark"> Medicamento<br></h3> <p class="lead">' . $row_usuario['medicamentos'] . "</p> <br><hr>";
-                
-                                    echo '<h3 class="text-dark"> Abreviação<br></h3> <p class="lead">' . $row_usuario['abreviacao'] . "</p> <br><hr>";
-                
-                                    echo '<h3 class="text-dark"> Latim<br></h3> <p class="lead">' . $row_usuario['latim'] . "</p><br><hr>";
-                
-                                    echo '<h3 class="text-dark"> Fonte</h3> <p class="lead">' . $row_usuario['fonte'] . '</p><br><hr>';
-                
-                                    echo '<h3 class="text-dark"> Principais</h3> <p class="lead">"' . $row_usuario['principal'] . '<br><hr>';
-                
-                                    /*<!-- End demo content -->*/
-                                    echo '<div class="btn-group btn-group-lg" role="group" aria-label="...">';
-                                    echo "<a class='nav-link text-light font-italic btn btn-success' href='editar.php?id=" . $row_usuario['id'] . "'>Editar Dados </a>";
-                
-                                    echo '<button type="button" class="nav-link text-light font-italic btn btn-danger" data-toggle="modal" data-target="#modalExemplo">
-                                    Apagar Dados
-                                  </button>';
-                
-                                    /*<!-- Modal -->*/
-                                    echo '<div class="modal fade text-dark" id="modalExemplo" tabindex="-1" role="dialog"aria-labelledby="exampleModalLabel" aria-hidden="true">';
-                                    echo  '<div class="modal-dialog" role="document">';
+                                    /*<!-- Modal individual -->*/
+                                    echo '<div class="modal fade text-dark" id="modalExcluir' . $row_usuario['id'] . '" tabindex="-1" aria-labelledby="label' . $row_usuario['id'] . '" aria-hidden="true">';
+                                    echo  '<div class="modal-dialog">';
                                     echo '<div class="modal-content">';
                                     echo '<div class="modal-header">';
-                                    echo '<h5 class="modal-title" id="exampleModalLabel">Apagar Dados</h5>';
-                                    echo '
-                                          </div>';
-                                    echo '<div class="modal-body text-dark">
-                                         Tem certeza de que deseja excluir o item selecionado?
-                                          </div>';
-                                    echo ' <div class="modal-footer">';
-                                    echo '<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>';
-                                    echo "<a class=' nav-link text-light font-italic btn btn-danger' 
-                                            href='proc_apagar_usuario.php?id=" . $row_usuario['id'] . "' ='Tem certeza de que deseja excluir o item selecionado?'> Apagar</a><br><hr>'";
+                                    echo '<h5 class="modal-title" id="label' . $row_usuario['id'] . '">Confirmar Exclusão</h5>';
+                                    echo '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>';
+                                    echo '</div>';
+                                    echo '<div class="modal-body text-dark">';
+                                    echo 'Tem certeza de que deseja excluir o medicamento <strong>' . $row_usuario['medicamentos'] . '</strong>?';
+                                    echo '</div>';
+                                    echo '<div class="modal-footer">';
+                                    echo '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>';
+                                    echo "<a class='btn btn-danger' href='proc_apagar_usuario.php?id=" . $row_usuario['id'] . "'>Apagar</a>";
                                     echo '</div>';
                                     echo '</div>';
                                     echo '</div>';
                                     echo '</div>';
-                                    echo '</div>';
+
+                                    echo '</td>';
+                                    echo '</tr>';
                                 }
+                                echo '</tbody>';
+                                echo '</table>';
+                                echo '</div>';
                             }
+
 
                             ?>
 

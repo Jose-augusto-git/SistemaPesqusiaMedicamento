@@ -33,7 +33,7 @@ if(isset($_SESSION["usuario"]) && is_array($_SESSION["usuario"])){
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 
-  <title> NewLife | Cadastro</title>
+  <title> NewMedic | Cadastro</title>
   <link rel="icon" href="imagem/prescricao-medica.svg" />
 </head>
 

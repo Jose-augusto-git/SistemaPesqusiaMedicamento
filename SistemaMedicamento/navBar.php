@@ -4,7 +4,7 @@
   <div class="py-4 px-3 mb-4 bg-light">
     <div class="media d-flex align-items-center">
       <div class="media-body">
-        <h4 class="m-0 text-success">New<span class="text-danger">Life</span></h4>
+        <h4 class="m-0 text-success">New<span class="text-danger">Medic</span></h4>
         <p class="font-weight-light text-muted mb-0">Sistema de Busca de Medicamentos</p>
       </div>
     </div>

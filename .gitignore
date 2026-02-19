@@ -1,0 +1,21 @@
+# Database
+SistemaMedicamento/database.db
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# PHP
+php.ini
+.php_history
+error_log
+
+# Diagnostic scripts
+SistemaMedicamento/check_php.php
+
+
+# VS Code / IDEs
+.vscode/
+.idea/
+*.swp
+*.bak
