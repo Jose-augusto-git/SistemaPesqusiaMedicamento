@@ -44,6 +44,7 @@ Este projeto não requer instalação de bancos de dados externos. Tudo o que vo
 
 ### Cadastro de Medicamento
 <img width="800" alt="Tela de Cadastro" src="https://github.com/user-attachments/assets/c86d8800-c590-4ff4-8532-b73692126385" />
+<img width="1600" height="954" alt="screencapture-localhost-8000-cadastro-php-2026-02-19-10_20_42" src="https://github.com/user-attachments/assets/09021df4-962a-4c4c-94a1-d817bb69f7e0" />
 
 ### Lista de Medicamentos
 <img width="800" alt="Lista de Medicamentos" src="https://github.com/user-attachments/assets/4884fffe-a6c4-4f08-adef-44a5dc8d7514" />
